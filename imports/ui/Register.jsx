@@ -15,7 +15,6 @@ export default class Register extends Component {
         if (password !== rePassword) {
             throw new Error('write the same password')
         }
-        console.log(email, password, rePassword);
 
         Accounts.createUser(
             {

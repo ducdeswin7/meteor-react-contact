@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
-
+import { browserHistory } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 
 export default class Main extends Component {
