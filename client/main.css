@@ -1,0 +1,41 @@
+/* CSS declarations go here */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+body {
+    font-family: 'PT Sans', sans-serif;
+    background: rgba(207, 216, 220, 0.44);
+}
+
+.main-container {
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.header a {
+    padding: 1.2rem 2rem;
+    box-sizing: border-box;
+    margin: 0 10px;
+    text-decoration: none;
+    color: grey;
+    font-size: 16px;
+}
+
+.active {
+    color: dodgerblue;
+    border-bottom: 3px solid dodgerblue;
+}
+
+.container {
+    height: 90vh;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
