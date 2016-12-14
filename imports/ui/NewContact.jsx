@@ -1,17 +1,21 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
-import { createContainer } from 'meteor/react-meteor-data';
 
 import { Meteor } from 'meteor/meteor';
 
 import  { ContactsDB }  from '../api/contacts';
+import { browserHistory } from 'react-router';
 
 
-class NewContact extends Component {
+export default class NewContact extends Component {
 
     componentDidMount() {
-        console.log(this.props.currentUser);
+        console.log(Meteor.user());
+
+        if (!Meteor.user()) {
+            browserHistory.push('/register');
+        }
     }
 
     handleSubmit(event) {
@@ -21,6 +25,8 @@ class NewContact extends Component {
         const firstName = ReactDOM.findDOMNode(this.refs.first_name).value.trim();
         const email = ReactDOM.findDOMNode(this.refs.email).value.trim();
         const country = ReactDOM.findDOMNode(this.refs.country).value.trim();
+
+
 
         ContactsDB.insert({
             lastName,
@@ -75,9 +81,3 @@ class NewContact extends Component {
         )
     }
 }
-
-export default createContainer(() => {
-    return {
-        currentUser: Meteor.user()
-    };
-}, NewContact)

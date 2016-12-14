@@ -6,6 +6,7 @@ import Home from './Home';
 import Contacts from './Contacts';
 import NewContact from './NewContact';
 import Register from './Register';
+import Login from './Login';
 
 export default class App extends Component {
     render() {
@@ -15,7 +16,8 @@ export default class App extends Component {
                     <Route path="dashboard/contacts" component={Contacts}/>
                     <Route path="dashboard/new-contact" component={NewContact}/>
                     <Route path="register" component={Register}/>
-                    <IndexRoute component={Home} />
+                    <Route path="login" component={Login}/>
+                    <IndexRoute component={Contacts} />
                 </Route>
             </Router>
         )

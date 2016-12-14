@@ -21,7 +21,8 @@ export default class Register extends Component {
             {
                 email,
                 password,
-            }, function (error) {
+            },
+            function (error) {
                 if (error) {
                     console.log('there was an error : ' + error.reason);
                 }
